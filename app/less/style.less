@@ -1,0 +1,178 @@
+@import (reference) "_grid.less";
+@import "_page.less";
+
+#calculate{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    
+    .calculate-body{
+        padding-right: 15%;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .group-title {
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    .hidden{
+        display: none;
+    }
+
+    #credit{
+        margin-top: 30px;
+    }
+    .group-button {
+        display: flex;        
+    }    
+    .credit-button{
+        outline: none;
+        background-color: transparent;
+        border: none;
+        flex-grow: 1;
+        padding: 10px 0;
+        cursor: pointer;
+        font-weight: 500;
+        border-bottom: 3px solid #cecece;        
+    }
+    .credit-button.active{
+        outline: none;
+        background-color: transparent;
+        border: none;
+        border-bottom: 3px solid #E31E24;
+    }
+    .text-info{
+        color: #999999;
+    }
+
+    .scroll-group{
+        display: flex;
+        align-items: center;
+        
+        .scroll-value{
+            width: 20%;
+            margin-right: 20px;   
+            text-align: center;
+            font-size: 17px;
+            font-weight: 500;
+            border-radius: 5px;
+            border: 1px solid #cecece;
+            height: 50px;  
+            outline: none;       
+        }
+        .scroll-bar{
+            flex-grow: 1;
+            height: 4px;
+            border-radius: 5px;
+            background-color: #cecece;
+            position: relative;
+
+            .scroll-touch{
+                background-color: #E31E24;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                position: absolute;
+                top: 0;
+                left:30%;
+                transform: translate(-50%,-45%);
+                z-index: 1;
+                //border: 1.5px solid #fff;
+                box-shadow: 0 0 5px 2px #fff;
+                cursor: pointer;
+            }
+            .scroll-fill{
+                background-color: #E31E24;
+                position: absolute;
+                width: 30%;
+                height: 100%;
+            }
+            .value-start, .value-end{
+                color: #999999;
+                font-size: 12px;
+                position: absolute;
+                top: -25px;
+            }
+            .value-start{left: 0;}
+            .value-end{right: 0;}
+        }
+    }
+
+    #pay-info{
+        display: flex;
+        flex-wrap: wrap;
+
+        .pay-block{
+            flex-grow: 1;
+            text-align: left;
+            flex-basis: 160px;
+            
+            .pay-text {
+                display: flex;
+                font-size: 24px;                
+                font-weight: 500;
+
+                .pay-prefix {
+                    font-size: 16px;
+                    font-weight: 400;
+                    align-self: flex-end;
+                    margin-left: 5px;
+                    margin-bottom: 3px;
+                }
+            }            
+        }
+    }
+
+    #total {
+        border-radius: 5px;
+        border: 1px solid #cecece;
+        padding: 20px;   
+        
+        .detail-block{
+            display: flex;
+            margin-bottom: 5px;            
+        }        
+        .detail-name{
+            flex-grow: 1;
+        }
+
+        .detail-total{
+            display: flex;
+            align-items: center;
+            p {
+                flex-grow: 1;
+            }
+            #totalAmount{
+                font-size: 28px;
+                font-weight: 500;
+            }
+        }
+
+    }
+
+    .accordion {
+        .accordion-header{
+            position: relative;
+        }
+
+        .accordion-button{
+            position: absolute;
+            top: 50%;
+            right: 0;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            background: url('../img/ui/arrow--default.svg') no-repeat 50%;
+            transform: rotate(-90deg) translateX(50%);
+            background-size: contain;
+        }
+    }
+}
+
+
+

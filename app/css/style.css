@@ -290,16 +290,22 @@ th {
 
 #calculate .accordion .accordion-header {
   position: relative;
+  padding-right: 15px;
 }
 
 #calculate .accordion .accordion-button {
   position: absolute;
-  top: 50%;
+  top: 25%;
   right: 0;
   cursor: pointer;
   width: 15px;
   height: 15px;
   background: url('../img/ui/arrow--default.svg') no-repeat 50%;
-  transform: rotate(-90deg) translateX(50%);
+  transform: rotate(90deg);
   background-size: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+#calculate .accordion .accordion-button.active {
+  transform: rotate(-90deg);
 }

@@ -30,7 +30,7 @@
                 <p class="group-title">Первоначальный взнос</p>
                 <div class="scroll-group"> 
                     <input type="text" name="deposit" class="scroll-value" value="20%" inputmode="numeric">               
-                    <div class="scroll-bar" data-scroll-value="10">                    
+                    <div class="scroll-bar" data-scroll-value="10" id="depositBar">                    
                         <span class="value-start">10%</span>
                         <span class="value-end">90%</span>
                         <div class="scroll-fill"></div>
@@ -122,6 +122,8 @@
         <p class="text-info">Кредитный калькулятор носит информативный характер и дает представление лишь о примерном объеме выплат по кредиту. Бери кредит ответственно и оценивай свои возможности возврата.</p>
 
     </div>
+
+    <input type="range" min="1" max="100" step="10">
    
 
     <script src="js/swiper.min.js"></script>

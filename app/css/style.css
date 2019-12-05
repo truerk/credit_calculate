@@ -122,6 +122,7 @@ th {
   max-width: 500px;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 500px;
 }
 
 #calculate .calculate-body {
@@ -291,6 +292,11 @@ th {
 #calculate .accordion .accordion-header {
   position: relative;
   padding-right: 15px;
+}
+
+#calculate .accordion .accordion-body {
+  color: #000;
+  min-height: 500px;
 }
 
 #calculate .accordion .accordion-button {

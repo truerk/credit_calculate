@@ -60,7 +60,7 @@ gulp.task('scripts', function(){
 });
 
 gulp.task('css-libs', function(){
-    return gulp.src([/*'app/css/libs.css', 'node_modules/normalize.css/normalize.css'*/])
+    return gulp.src([/*'app/css/libs.css',*/ 'node_modules/normalize.css/normalize.css'])
     .pipe(concat('libs.css'))
     .pipe(cssnano())
     .pipe(rename({suffix: '.min'}))

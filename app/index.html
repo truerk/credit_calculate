@@ -29,24 +29,28 @@
             <div id="deposit">
                 <p class="group-title">Первоначальный взнос</p>
                 <div class="scroll-group"> 
-                    <input type="text" name="deposit" class="scroll-value" value="20%" inputmode="numeric">               
-                    <div class="scroll-bar" data-scroll-value="10" id="depositBar">                    
+                    <input type="text" name="deposit" id="depositValue" class="scroll-value" value="99%" inputmode="numeric">               
+                    <div class="scroll-bar" id="scrollDeposit">                    
                         <span class="value-start">10%</span>
-                        <span class="value-end">90%</span>
-                        <div class="scroll-fill"></div>
-                        <div class="scroll-touch"></div>
+                        <span class="value-now"></span>
+                        <span class="value-end">90%</span>  
+                        <input type="range" step="1" min="10" max="90" class="scroll-slider">
+                        <div class="scroll-fill-before"></div>
+                        <div class="scroll-fill-after"></div>
                     </div>
                 </div>            
             </div>
             <div id="date">
                 <p class="group-title">Срок кредита</p>
                 <div class="scroll-group">  
-                    <input type="text" name="date" class="scroll-value" value="6 мес." inputmode="numeric">              
-                    <div class="scroll-bar">                    
+                    <input type="text" name="date" class="scroll-value" id="dateValue" value="99 мес." inputmode="numeric">              
+                    <div class="scroll-bar" id="scrollCreditDate">                    
                         <span class="value-start">1 Месяц</span>
-                        <span class="value-end">36 месяцев</span>
-                        <div class="scroll-fill"></div>
-                        <div class="scroll-touch"></div>
+                        <span class="value-now">10%</span>
+                        <span class="value-end">36 месяцев</span>                        
+                        <div class="scroll-fill-before"></div>
+                        <div class="scroll-fill-after"></div>
+                        <input type="range" min="1" max="36" step="1" class="scroll-slider">
                     </div>
                 </div>
             </div>
@@ -123,7 +127,7 @@
 
     </div>
 
-    <input type="range" min="1" max="100" step="10">
+    
    
 
     <script src="js/swiper.min.js"></script>

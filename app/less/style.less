@@ -65,34 +65,58 @@
             border: 1px solid #cecece;
             height: 50px;  
             outline: none;       
-        }
-        .scroll-bar{
-            flex-grow: 1;
-            height: 4px;
-            border-radius: 5px;
-            background-color: #cecece;
-            position: relative;
+        }   
 
-            .scroll-touch{
+        .scroll-bar{
+            position: relative;
+            flex-grow: 1;
+            display: flex;            
+            border-radius: 5px;
+            
+            .scroll-slider{
+                -webkit-appearance: none;
+                width: 100%;
+                height: 4px;
+                z-index: 1;
+                background-color: transparent;
+                outline: none;
+            }
+            .scroll-slider::-webkit-slider-thumb{
+                -webkit-appearance: none;
+                appearance: none;
+                -webkit-appearance: none;
                 background-color: #E31E24;
                 width: 25px;
                 height: 25px;
                 border-radius: 50%;
-                position: absolute;
-                top: 0;
-                left:0%;
-                transform: translate(0%,-45%);
-                z-index: 1;
-                box-shadow: 0 0 5px 2px #fff;
+                box-shadow: ;
                 cursor: pointer;
             }
-            .scroll-fill{
+            .scroll-slider::-moz-range-thumb{
+                -webkit-appearance: none;
+                appearance: none;
+                -webkit-appearance: none;
                 background-color: #E31E24;
-                position: absolute;
-                width: 30%;
-                height: 100%;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                cursor: pointer;
+            }   
+            .scroll-fill-before{
+               position: absolute;
+               width: 0%;
+               left: 0;
+               height: 100%;
+               background-color: #E31E24;
             }
-            .value-start, .value-end{
+            .scroll-fill-after{
+                position: absolute;
+                width: 0%;
+                right: 0;
+                height: 100%;
+                background-color: #cecece;
+             }
+            .value-start, .value-end, .value-now{
                 color: #999999;
                 font-size: 12px;
                 position: absolute;
@@ -100,6 +124,15 @@
             }
             .value-start{left: 0;}
             .value-end{right: 0;}
+            .value-now{
+                left: 0;
+                top: -35px;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: max-content;
+                height: max-content;
+            }
         }
     }
 
@@ -183,6 +216,3 @@
         }
     }
 }
-
-
-

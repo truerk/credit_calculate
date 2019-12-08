@@ -7,7 +7,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var gcmq = require('gulp-group-css-media-queries');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');//Обьединение файлов
-var uglify = require('gulp-uglifyjs');//сжатие js
+var uglify = require('gulp-uglify');//сжатие js
 var cssnano = require('gulp-cssnano');//минификация
 var rename = require('gulp-rename');//переменование файлов
 var del = require('del');//удаление файлов и папок
@@ -57,7 +57,7 @@ gulp.task('scripts', function(){
     .pipe(uglify(
         //{toplevel: true}
     ))
-    .pipe(rename({suffix: '.min'}))
+    //.pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('app/js'));
 });
 
@@ -118,7 +118,7 @@ function delFile(){
     //del(['app/css/*']);
 }
 
-gulp.task('build', ['clean', 'less', 'scripts'], function(){
+gulp.task('build', ['clean', 'less', /*'scripts'*/], function(){
     var buildCss = gulp.src([
         'app/css/style.css',
         'app/css/swiper.min.css',

@@ -61,15 +61,40 @@ document.addEventListener('DOMContentLoaded', function(){
         scrollBar.forEach((scrollBar) => {             
             fill(scrollBar);
         });
+<<<<<<< HEAD
     }
 
     
-    
-    var accordionCalculate = new accordion('.accordion');
-    var scroll = new scrollBar('.scroll-bar');
+=======
 
-    //изменяем input со значением скролла
-    document.querySelectorAll('.scroll-slider')
+        function fill(scrollBar) {
+            var scrollSlider = scrollBar.querySelector('.scroll-slider');
+            var scrollFillBefore = scrollBar.querySelector('.scroll-fill-before');
+            var scrollFillAfter = scrollBar.querySelector('.scroll-fill-after');                
+            var max = scrollSlider.getAttribute('max');
+            var min = scrollSlider.getAttribute('min');            
+            if (max == null || max.length == 0) {
+                scrollSlider.setAttribute('max', '100');
+                max = scrollSlider.getAttribute('max');
+            }
+            if (min == null || min.length == 0) {
+                scrollSlider.setAttribute('min', '0');
+                min = scrollSlider.getAttribute('min'); 
+            }
+            var percent = (max - min) / 100; 
+    
+            scrollFillBefore.style.width = 'calc((' + (scrollSlider.value-min)/percent  + '%) )';
+            scrollFillAfter.style.width = 'calc((' + (100 - (scrollSlider.value-min)/percent)  + '%) )';
+>>>>>>> eee807a3364728f5049f2368939dd14a3af12fdd
+    
+            scrollSlider.addEventListener('input', e => {            
+                scrollFillBefore.style.width = 'calc((' + (scrollSlider.value-min)/percent  + '%) )';
+                scrollFillAfter.style.width = 'calc((' + (100 - (scrollSlider.value-min)/percent)  + '%) )';
+            });
+        }
+
+        //изменяем input со значением скролла
+        document.querySelectorAll('.scroll-slider')
         .forEach(scroll => {            
             if(scroll.closest('#scrollDeposit')){
                 scroll.closest('.scroll-group')
@@ -91,9 +116,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 }                
             });
         });
-    
-    //изменяем скролл со значением инпута
-    document.querySelectorAll('.scroll-value')
+
+        //изменяем скролл со значением инпута
+        document.querySelectorAll('.scroll-value')
         .forEach(input => { 
             var valueInput = '';
             var max = input.closest('.scroll-group').querySelector('.scroll-slider').getAttribute('max');
@@ -121,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         if (!Number.isNaN(Math.round(e.target.value))) {
                             if (Math.round(e.target.value) >= min && Math.round(e.target.value) <= max) {
                                 input.closest('.scroll-group').querySelector('.scroll-slider').value = Math.round(e.target.value);
-                                fill( input.closest('.scroll-group').querySelector('.scroll-bar'));
+                                fill(input.closest('.scroll-group').querySelector('.scroll-bar'));
                                 e.target.value = Math.round(e.target.value) + '%';                             
                             } else {
                                 e.target.value = valueInput + '%';
@@ -153,4 +178,14 @@ document.addEventListener('DOMContentLoaded', function(){
                 }                
             });            
         });
+    }
+
+    
+
+    
+    
+    
+
+    var accordionCalculate = new accordion('.accordion');
+    var scroll = new scrollBar('.scroll-bar');
 });

@@ -27,11 +27,16 @@ document.addEventListener('DOMContentLoaded', function(){
                     accordionBody.style.maxHeight = '0';                
                 }
             });
-        });        
+        });
+        
     }
 
     function scrollBar (scrollBar){
         var scrollBar = document.querySelectorAll(scrollBar);
+
+        scrollBar.forEach((scrollBar) => {             
+            fill(scrollBar);
+        });
 
         function fill(scrollBar) {
             var scrollSlider = scrollBar.querySelector('.scroll-slider');
@@ -58,18 +63,8 @@ document.addEventListener('DOMContentLoaded', function(){
             });
         }
 
-        scrollBar.forEach((scrollBar) => {             
-            fill(scrollBar);
-        });
-    }
-
-    
-    
-    var accordionCalculate = new accordion('.accordion');
-    var scroll = new scrollBar('.scroll-bar');
-
-    //изменяем input со значением скролла
-    document.querySelectorAll('.scroll-slider')
+        //изменяем input со значением скролла
+        document.querySelectorAll('.scroll-slider')
         .forEach(scroll => {            
             if(scroll.closest('#scrollDeposit')){
                 scroll.closest('.scroll-group')
@@ -91,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 }                
             });
         });
-    
-    //изменяем скролл со значением инпута
-    document.querySelectorAll('.scroll-value')
+
+        //изменяем скролл со значением инпута
+        document.querySelectorAll('.scroll-value')
         .forEach(input => { 
             var valueInput = '';
             var max = input.closest('.scroll-group').querySelector('.scroll-slider').getAttribute('max');
@@ -121,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         if (!Number.isNaN(Math.round(e.target.value))) {
                             if (Math.round(e.target.value) >= min && Math.round(e.target.value) <= max) {
                                 input.closest('.scroll-group').querySelector('.scroll-slider').value = Math.round(e.target.value);
-                                fill( input.closest('.scroll-group').querySelector('.scroll-bar'));
+                                fill(input.closest('.scroll-group').querySelector('.scroll-bar'));
                                 e.target.value = Math.round(e.target.value) + '%';                             
                             } else {
                                 e.target.value = valueInput + '%';
@@ -153,4 +148,14 @@ document.addEventListener('DOMContentLoaded', function(){
                 }                
             });            
         });
+    }
+
+    
+
+    
+    
+    
+
+    var accordionCalculate = new accordion('.accordion');
+    var scroll = new scrollBar('.scroll-bar');
 });

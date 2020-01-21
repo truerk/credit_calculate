@@ -118,7 +118,7 @@ function delFile(){
     //del(['app/css/*']);
 }
 
-gulp.task('build', ['clean', 'less', 'scripts'], function(){
+gulp.task('build', ['clean', 'less', /*'scripts'*/], function(){
     var buildCss = gulp.src([
         'app/css/style.css',
         'app/css/swiper.min.css',
